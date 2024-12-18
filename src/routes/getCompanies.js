@@ -1,7 +1,7 @@
 import express from 'express';
 import { PrismaClient } from '@prisma/client';
 import asyncHandler from '../controllers/asyncHandler.js';
-import { convertBigIntToNumber } from '../controllers/convertBigIntToNumber.js';
+import { convertToBigIntFromObjArray } from '../controllers/convertToBigIntFromObjArray.js';
 
 const router = express.Router();
 const prisma = new PrismaClient();
@@ -12,7 +12,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const companies = await prisma.company.findMany();
     // 데이터 중 bigint를 number로 변경
-    const convertedCompanies = convertBigIntToNumber(companies);
+    const convertedCompanies = convertToBigIntFromObjArray(companies);
     res.send(convertedCompanies);
   })
 );
