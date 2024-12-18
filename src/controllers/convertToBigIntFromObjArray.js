@@ -4,7 +4,7 @@
  * - 전체를 JSON.stringify한 후 다시 JSON.parse해 줌
  */
 
-export function convertBigIntToNumber(objArray) {
+export function convertToBigIntFromObjArray(objArray) {
   return objArray.map((obj) => {
     return JSON.parse(
       JSON.stringify(obj, (key, value) => {
