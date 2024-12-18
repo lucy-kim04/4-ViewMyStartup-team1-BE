@@ -6,7 +6,7 @@ import { convertBigIntToNumber } from '../controllers/convertBigIntToNumber.js';
 const router = express.Router();
 const prisma = new PrismaClient();
 
-// 전체 기업 리스트 조회
+// 기업 리스트 조회 API
 router.get(
   '/companies',
   asyncHandler(async (req, res) => {
