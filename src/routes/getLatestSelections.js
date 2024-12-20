@@ -23,6 +23,7 @@ router.get(
     // 해당 id를 가진 기업 목록을 조회
     const selectedCompanies = await prisma.company.findMany({
       where: { id: { in: selectedIdsArray } },
+      select: { id: true, name: true, imageUrl: true, category: true },
     });
     res.send(convertToBigIntFromObjArray(selectedCompanies));
   })
