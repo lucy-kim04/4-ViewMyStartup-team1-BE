@@ -4,6 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import getCompanies from './src/routes/getCompanies.js';
 import getUsers from './src/routes/getUsers.js';
+import getLatestSelections from './src/routes/getLatestSelections.js';
 
 dotenv.config();
 export const app = express();
@@ -21,5 +22,7 @@ app.use(bodyParser.json());
 app.use('/api', getCompanies);
 // 전체 사용자 목록 조회(조형민)
 app.use('/api', getUsers);
+// 특정 사용자의 최근 선택 기업 목록 조회(조형민)
+app.use('/api', getLatestSelections);
 
 app.listen(process.env.PORT || 5500, () => console.log('Server Started'));
