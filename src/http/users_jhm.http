@@ -7,3 +7,12 @@ GET http://localhost:5500/api/users/fca6ef85-02ba-4868-a7b7-4f49ed16e881/selecti
 
 ###
 GET http://localhost:5500/api/users/fca6ef85-02ba-4868-a7b7-4f49ed16e881
+
+###
+PATCH  http://localhost:5500/api/users/fca6ef85-02ba-4868-a7b7-4f49ed16e881
+Content-Type: application/json
+
+{
+  "name":"조형민",
+  "latestSelectedCompanies":[]
+}

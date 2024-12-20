@@ -12,10 +12,66 @@ const prisma = new PrismaClient();
 router.get(
   '/companies',
   asyncHandler(async (req, res) => {
-    const companies = await prisma.company.findMany();
-    // 데이터 중 bigint를 number로 변경
-    const convertedCompanies = convertToBigIntFromObjArray(companies);
-    res.send(convertedCompanies);
+    const { limit = 5, skip = 0, searchString, orderBy = 'highestSales' } = req.query;
+    const where = searchString ? { name: { contains: searchString } } : {};
+    let order;
+    switch (orderBy) {
+      case 'highestSales':
+        order = {
+          revenue: 'desc',
+        };
+        break;
+      case 'lowestSales':
+        order = {
+          revenue: 'asc',
+        };
+        break;
+      case 'highestInvestment':
+        order = {
+          actualInvest: 'asc',
+        };
+        break;
+      case 'lowestInvestment':
+        order = {
+          actualInvest: 'desc',
+        };
+        break;
+      case 'mostEmployees':
+        order = {
+          employeesCount: 'desc',
+        };
+        break;
+      case 'fewestEmployees':
+        order = {
+          employeesCount: 'asc',
+        };
+        break;
+      case 'name':
+        order = {
+          name: 'asc',
+        };
+        break;
+    }
+    const companies = await prisma.company.findMany({
+      where,
+      select: {
+        id: true,
+        name: true,
+        imageUrl: true,
+        description: true,
+        category: true,
+        actualInvest: true,
+        revenue: true,
+        employeesCount: true,
+        mySelectionCount: true,
+        compareSelectionCount: true,
+      },
+      orderBy: order,
+      take: parseInt(limit),
+      skip: parseInt(skip),
+    });
+    const totalCount = await prisma.company.count({ where });
+    res.send({ totalCount: totalCount, companies: convertToBigIntFromObjArray(companies) });
   })
 );
 

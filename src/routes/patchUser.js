@@ -7,12 +7,16 @@ import asyncHandler from '../controllers/asyncHandler.js';
 const router = express.Router();
 const prisma = new PrismaClient();
 
-// 전체 사용자 목록 조회
-router.get(
-  '/users',
+// user 정보 수정
+router.patch(
+  '/users/:id',
   asyncHandler(async (req, res) => {
-    const users = await prisma.user.findMany({ orderBy: { name: 'desc' } });
-    res.send(users);
+    const { id } = req.params;
+    const user = await prisma.user.update({
+      where: { id },
+      data: req.body,
+    });
+    res.send(user);
   })
 );
 

@@ -1,3 +1,13 @@
 // 조형민
 
-GET http://localhost:5500/api/companies
+GET http://localhost:5500/api/companies?limit=20
+###
+GET http://localhost:5500/api/companies?orderBy=name
+
+###
+PATCH  http://localhost:5500/api/companies/db1a0353-8e84-476c-9b52-53df166a3503
+Content-Type: application/json
+
+{
+  "mySelectionCount":6
+}
