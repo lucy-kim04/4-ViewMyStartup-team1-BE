@@ -84,7 +84,7 @@ export const COMPANIES = [
     id: 'a8b128545-6405-4e82-8282-f0384f2d5f36',
     name: '비브리지',
     imageUrl:
-      'https://logo-resources.thevc.kr/organizations/200x200/1c6530110690076399ab100ab4bdb678073e159f045253e700b08115017634ea_1602996000306496.jpgm',
+      'https://logo-resources.thevc.kr/organizations/200x200/1c6530110690076399ab100ab4bdb678073e159f045253e700b08115017634ea_1602996000306496.jpg',
     actualInvest: 2500000000,
     simInvest: 10000000,
     revenue: 32800000,
