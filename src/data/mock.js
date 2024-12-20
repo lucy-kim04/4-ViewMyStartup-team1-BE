@@ -44,6 +44,7 @@ export const USERS = [
     latestSelectedCompanies: [
       '9b43d01f-6e70-431d-a852-cc30ba51c4d57',
       '1c0d70dd-677e-46bc-a863-b746e5e1ff8c',
+      'a8b128545-6405-4e82-8282-f0384f2d5f36',
     ],
   },
 ];
