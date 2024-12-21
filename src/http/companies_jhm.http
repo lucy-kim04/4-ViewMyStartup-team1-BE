@@ -5,6 +5,9 @@ GET http://localhost:5500/api/companies?limit=20
 GET http://localhost:5500/api/companies?orderBy=name
 
 ###
+GET http://localhost:5500/api/companies/1dcb892b-e818-4f1b-8f13-7ecf5aaf31d6/rank
+
+###
 PATCH  http://localhost:5500/api/companies/db1a0353-8e84-476c-9b52-53df166a3503
 Content-Type: application/json
 
