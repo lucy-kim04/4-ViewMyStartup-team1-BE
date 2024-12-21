@@ -36,6 +36,16 @@ router.get(
           actualInvest: 'desc',
         };
         break;
+      case 'highestSimInvestment':
+        order = {
+          simInvest: 'asc',
+        };
+        break;
+      case 'lowestSimInvestment':
+        order = {
+          simInvest: 'desc',
+        };
+        break;
       case 'mostEmployees':
         order = {
           employeesCount: 'desc',
@@ -61,6 +71,7 @@ router.get(
         description: true,
         category: true,
         actualInvest: true,
+        simInvest: true,
         revenue: true,
         employeesCount: true,
         mySelectionCount: true,

@@ -7,6 +7,7 @@ import getUsers from './src/routes/getUsers.js';
 import getLatestSelections from './src/routes/getLatestSelections.js';
 import patchUser from './src/routes/patchUser.js';
 import patchCompany from './src/routes/patchCompany.js';
+import getCompanyRank from './src/routes/getCompanyRank.js';
 
 dotenv.config();
 export const app = express();
@@ -30,5 +31,7 @@ app.use('/api', getLatestSelections);
 app.use('/api', patchUser);
 // 기업 정보 수정하기(조형민)
 app.use('/api', patchCompany);
+// 기업 순위 조회하기(조형민)
+app.use('/api', getCompanyRank);
 
 app.listen(process.env.PORT || 5500, () => console.log('Server Started'));
