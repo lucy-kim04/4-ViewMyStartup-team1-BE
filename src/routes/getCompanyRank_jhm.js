@@ -13,7 +13,7 @@ export default router;
 router.get(
   '/companies/:id/rank',
   asyncHandler(async (req, res) => {
-    const { orderBy = 'highestSales' } = req.query;
+    const { orderBy } = req.query;
     const { id } = req.params;
     let order;
     switch (orderBy) {
@@ -35,6 +35,16 @@ router.get(
       case 'fewestEmployees':
         order = {
           employeesCount: 'asc',
+        };
+        break;
+      case 'highestInvestment':
+        order = {
+          actualInvest: 'desc',
+        };
+        break;
+      case 'lowestInvestment':
+        order = {
+          actualInvest: 'asc',
         };
         break;
       default:

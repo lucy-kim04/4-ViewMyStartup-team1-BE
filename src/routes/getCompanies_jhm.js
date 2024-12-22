@@ -28,22 +28,22 @@ router.get(
         break;
       case 'highestInvestment':
         order = {
-          actualInvest: 'asc',
+          actualInvest: 'desc',
         };
         break;
       case 'lowestInvestment':
         order = {
-          actualInvest: 'desc',
+          actualInvest: 'asc',
         };
         break;
       case 'highestSimInvestment':
         order = {
-          simInvest: 'asc',
+          simInvest: 'desc',
         };
         break;
       case 'lowestSimInvestment':
         order = {
-          simInvest: 'desc',
+          simInvest: 'asc',
         };
         break;
       case 'mostEmployees':
