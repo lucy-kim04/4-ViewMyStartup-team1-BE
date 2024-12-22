@@ -53,7 +53,7 @@ export const COMPANIES = [
     id: '38dd89a8-ade5-44c5-b64b-9ce8b2972def',
     name: '링글잉글리시 에듀케이션서비스',
     imageUrl:
-      'https://img.cohttps://logo-resources.thevc.kr/organizations/200x200/a7234c837cfe1022ac7ab2113f16864785eb64ad411f11768a71527ee43607e6_156930642510981.jpg',
+      'https://logo-resources.thevc.kr/organizations/200x200/a7234c837cfe1022ac7ab2113f16864785eb64ad411f11768a71527ee43607e6_156930642510981.jpg',
     actualInvest: 10000000000,
     simInvest: 500000000,
     revenue: 12900000000,
