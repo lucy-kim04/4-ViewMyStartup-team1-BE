@@ -37,6 +37,10 @@ router.get(
           employeesCount: 'asc',
         };
         break;
+      default:
+        order = {
+          revenue: 'desc',
+        };
     }
     const companies = await prisma.company.findMany({ orderBy: order });
     const myCompanyIdx = companies.findIndex((company) => company.id === id);

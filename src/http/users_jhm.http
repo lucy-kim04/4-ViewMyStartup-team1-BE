@@ -1,6 +1,6 @@
 // 조형민
 
-GET http://localhost:5500/api/users
+GET http://localhost:5500/api/jhm/users
 
 ###
 GET http://localhost:5500/api/users/fca6ef85-02ba-4868-a7b7-4f49ed16e881/selections

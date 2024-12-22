@@ -61,6 +61,10 @@ router.get(
           name: 'asc',
         };
         break;
+      default:
+        order = {
+          revenue: 'desc',
+        };
     }
     const companies = await prisma.company.findMany({
       where,
