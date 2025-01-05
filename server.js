@@ -9,6 +9,11 @@ import patchUser_jhm from './src/routes/patchUser_jhm.js';
 import patchCompany_jhm from './src/routes/patchCompany_jhm.js';
 import getCompanyRank_jhm from './src/routes/getCompanyRank_jhm.js';
 import getCompany_jhm from './src/routes/getCompany_jhm.js';
+import getInvestments_ksh from './src/routes/getInvestments_ksh.js';
+import getCompanies_ksh from './src/routes/getCompanies_ksh.js';
+import createInvestment_ksh from './src/routes/createInvestment_ksh.js';
+import patchInvestment_ksh from './src/routes/patchInvestment_ksh.js';
+import deleteInvestment_ksh from './src/routes/deleteInvestment_ksh.js';
 
 dotenv.config();
 export const app = express();
@@ -39,5 +44,17 @@ app.use('/api/jhm', patchCompany_jhm);
 app.use('/api/jhm', getCompanyRank_jhm);
 // 특정 기업 조회하기(조형민)
 app.use('/api/jhm', getCompany_jhm);
+
+// 기업 목록 조회(김세환)
+app.use('/api/ksh', getCompanies_ksh);
+// 투자 정보 조회(김세환)
+app.use('/api/ksh', getInvestments_ksh);
+// 투자 정보 추가(김세환)
+app.use('/api/ksh', createInvestment_ksh);
+// 투자 정보 수정(김세환)
+app.use('/api/ksh', patchInvestment_ksh);
+// 투자 정보 삭제(김세환)
+app.use('/api/ksh', deleteInvestment_ksh);
+
 
 app.listen(process.env.PORT || 5500, () => console.log('Server Started'));
