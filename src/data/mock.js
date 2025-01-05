@@ -308,7 +308,7 @@ export const COMPANIES = [
   },
   {
     id: 'db1a0353-8e84-476c-9b52-53df166a3503',
-    name: '마이리얼트립',
+    name: '마이리얼트립2',
     imageUrl:
       'https://logo-resources.thevc.kr/organizations/200x200/de888a2775c6b7ff35353c670e38fa62b76624d4869c91a2287ef2f038ffc4bc_169871270417156.jpg',
     actualInvest: 170000000000,

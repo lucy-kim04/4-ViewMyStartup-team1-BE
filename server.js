@@ -8,6 +8,8 @@ import getLatestSelections_jhm from './src/routes/getLatestSelections_jhm.js';
 import patchUser_jhm from './src/routes/patchUser_jhm.js';
 import patchCompany_jhm from './src/routes/patchCompany_jhm.js';
 import getCompanyRank_jhm from './src/routes/getCompanyRank_jhm.js';
+import getCompanyDetail_kjy from './src/routes/getCompanyDetail_kjy.js';
+import getInvesterList_kjy from './src/routes/getInvesterList_kjy.js';
 import getCompany_jhm from './src/routes/getCompany_jhm.js';
 import getInvestments_ksh from './src/routes/getInvestments_ksh.js';
 import getCompanies_ksh from './src/routes/getCompanies_ksh.js';
@@ -56,5 +58,10 @@ app.use('/api/ksh', patchInvestment_ksh);
 // 투자 정보 삭제(김세환)
 app.use('/api/ksh', deleteInvestment_ksh);
 
+
+// 기업 상세 정보 조회(김주영)
+app.use('/api/kjy', getCompanyDetail_kjy);
+// 해당 기업에 투자한 투자자 목록 조회(김주영)
+app.use('/api/kjy', getInvesterList_kjy);
 
 app.listen(process.env.PORT || 5500, () => console.log('Server Started'));

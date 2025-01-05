@@ -6,6 +6,7 @@ GET http://localhost:5500/api/companies?orderBy=name
 
 ###
 GET http://localhost:5500/api/jhm/companies/1c0d70dd-677e-46bc-a863-b746e5e1ff8c
+
 ###
 GET http://localhost:5500/api/jhm/companies/1dcb892b-e818-4f1b-8f13-7ecf5aaf31d6/rank
 
@@ -13,7 +14,24 @@ GET http://localhost:5500/api/jhm/companies/1dcb892b-e818-4f1b-8f13-7ecf5aaf31d6
 PATCH  http://localhost:5500/api/jhm/companies/a8b128545-6405-4e82-8282-f0384f2d5f36
 Content-Type: application/json
 
+###
+GET http://localhost:5500/api/edu/kjy/companies
+
 {
+  "mySelectionCount":6
+}
+
+###
+GET http://localhost:5500/api/kjy/companies/db1a0353-8e84-476c-9b52-53df166a3503
+
+
+###
+
+GET http://localhost:5500/api/kjy/companies/db1a0353-8e84-476c-9b52-53df166a3503
+
+
+###
+GET http://localhost:5500/api/kjy/companies/db1a0353-8e84-476c-9b52-53df166a3503/investments
   "revenue":0
 }
 
