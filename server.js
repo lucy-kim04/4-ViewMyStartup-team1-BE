@@ -8,6 +8,7 @@ import getLatestSelections_jhm from './src/routes/getLatestSelections_jhm.js';
 import patchUser_jhm from './src/routes/patchUser_jhm.js';
 import patchCompany_jhm from './src/routes/patchCompany_jhm.js';
 import getCompanyRank_jhm from './src/routes/getCompanyRank_jhm.js';
+import getCompany_jhm from './src/routes/getCompany_jhm.js';
 
 dotenv.config();
 export const app = express();
@@ -36,5 +37,7 @@ app.use('/api/jhm', patchUser_jhm);
 app.use('/api/jhm', patchCompany_jhm);
 // 기업 순위 조회하기(조형민)
 app.use('/api/jhm', getCompanyRank_jhm);
+// 특정 기업 조회하기(조형민)
+app.use('/api/jhm', getCompany_jhm);
 
 app.listen(process.env.PORT || 5500, () => console.log('Server Started'));

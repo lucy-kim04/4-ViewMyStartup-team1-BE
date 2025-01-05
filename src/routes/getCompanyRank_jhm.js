@@ -58,6 +58,7 @@ router.get(
     // 전체 기업 개수가 5보다 작으면 rank 정보만 추가
     if (companies.length < 5) {
       rankCompanies = [...companies];
+      // 각 기업에 rank 부여하기
       rankCompanies.forEach((company, index) => {
         company['rank'] = index + 1;
       });
@@ -65,11 +66,12 @@ router.get(
       // 내가 선택한 기업이 1위나 2위인 경우
       if (myCompanyIdx === 0 || myCompanyIdx === 1) {
         rankCompanies = [companies[0], companies[1], companies[2], companies[3], companies[4]];
+        // 각 기업에 rank 부여하기
         rankCompanies.forEach((company, index) => {
           company['rank'] = index + 1;
         });
       }
-      // 내가 선택한 기업이 꼴지나 꼴지 앞자리인 경우
+      // 내가 선택한 기업이 꼴지 혹은 꼴지 앞자리인 경우
       else if (myCompanyIdx === companies.length - 1 || myCompanyIdx === companies.length - 2) {
         rankCompanies = [
           companies[companies.length - 5],
@@ -78,6 +80,7 @@ router.get(
           companies[companies.length - 2],
           companies[companies.length - 1],
         ];
+        // 각 기업에 rank 부여하기
         rankCompanies.forEach((company, index) => {
           company['rank'] = companies.length - 4 + index;
         });
@@ -89,6 +92,7 @@ router.get(
           companies[myCompanyIdx + 1],
           companies[myCompanyIdx + 2],
         ];
+        // 각 기업에 rank 부여하기
         rankCompanies.forEach((company, index) => {
           company['rank'] = myCompanyIdx - 1 + index;
         });
