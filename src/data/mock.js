@@ -308,7 +308,7 @@ export const COMPANIES = [
   },
   {
     id: 'db1a0353-8e84-476c-9b52-53df166a3503',
-    name: '마이리얼트립',
+    name: '마이리얼트립2',
     imageUrl:
       'https://logo-resources.thevc.kr/organizations/200x200/de888a2775c6b7ff35353c670e38fa62b76624d4869c91a2287ef2f038ffc4bc_169871270417156.jpg',
     actualInvest: 170000000000,
@@ -419,7 +419,8 @@ export const INVESTMENTS = [
     userId: '5645d9f6-cb2d-4004-a522-5909d1592662',
     companyId: 'db1a0353-8e84-476c-9b52-53df166a3503',
     amount: 100000000,
-    comment: '여행을 좋아함. 외국어에 능통하기 때문에 가능성이 보임. 진출 분야가 무궁무진함.',
+    comment:
+      '여행을 좋아함. 외국어에 능통하기 때문에 가능성이 보임. 진출 분야가 무궁무진함.',
     password: '1111', // 통일합시다!!
     createdAt: '2023-07-16T09:00:00Z',
     updatedAt: '2023-07-16T09:00:00Z',
