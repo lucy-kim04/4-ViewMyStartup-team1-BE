@@ -1,0 +1,4 @@
+GET http://localhost:5500/api/ksh/companies?skip=0&limit=20&orderBy=highestSimInvestment
+
+### 
+GET http://localhost:5500/api/ksh/companies?skip=0&limit=1&orderBy=lowestSimInvestment
