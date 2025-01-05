@@ -1,1 +1,47 @@
 GET http://localhost:5500/api/ksh/investments?skip=0&take=10&orderBy=lowestSimInvest
+
+###
+
+POST http://localhost:5500/api/ksh/investments
+Content-Type: application/json
+
+{
+  "amount": 5000200,
+  "comment": "꽤나 느낌이 좋습니다",
+  "password": "securePassword123",
+  "passwordConfirmation": "securePassword123",
+  "user": {
+    "id": "1ef3627b-ea92-4c9e-8562-ea7b27a49a0a",
+    "name": "김세환"
+  },
+  "company": {
+    "id": "3e5b0175-8953-474d-ad44-3d9f117ba94c",
+    "name": "서울거래"
+  }
+}
+
+###
+
+PUT http://localhost:5500/api/ksh/investments/58182a72-f6ee-450e-8c13-0de785c5504b
+Content-Type: application/json
+
+{
+  "amount": 50000,
+  "comment": "느낌이 안좋아져 투자금을 줄였습니다",
+  "password": "securePassword123",
+  "passwordConfirmation": "securePassword123",
+  "user": {
+    "id": "1ef3627b-ea92-4c9e-8562-ea7b27a49a0a",
+    "name": "김세환"
+  },
+  "company": {
+    "id": "3e5b0175-8953-474d-ad44-3d9f117ba94c",
+    "name": "서울거래",
+    "imageUrl": "https://logo-resources.thevc.kr/organizations/200x200/6f9e7dda4fa26e2f4fdf7176c5af286cb51be30c54ae8a61da63b64d2585e3f7_1602573753427485.jpg",
+    "category": "FINTECH"
+  }
+}
+
+###
+
+DELETE http://localhost:5500/api/ksh/investments/70a99eb1-64fe-49c0-b17f-6c6190a15c37?password=securePassword123
