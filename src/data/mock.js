@@ -375,6 +375,7 @@ export const COMPANIES = [
 export const INVESTMENTS = [
   {
     id: '9416b954-5fa1-464e-972c-6b39f5200b62',
+    name: '투자자A',
     userId: 'a98f5413-04c9-47e9-80cf-dd00cdf8090c',
     companyId: 'f700fba6-627b-41b8-86e6-ec6aaa2d2020',
     amount: 50000000,
@@ -385,6 +386,7 @@ export const INVESTMENTS = [
   },
   {
     id: '61340461-d2ac-4ef1-a0c4-f7c6928a9d8c',
+    name: '투자자B',
     userId: '1ef3627b-ea92-4c9e-8562-ea7b27a49a0a',
     companyId: '0e72d625-933c-4ba6-9aa3-69c31e4ed836',
     amount: 50000000,
@@ -395,6 +397,7 @@ export const INVESTMENTS = [
   },
   {
     id: '811c7f7a-8b3d-450e-914a-bf5e2fd70ca2',
+    name: '투자자B',
     userId: '1ef3627b-ea92-4c9e-8562-ea7b27a49a0a',
     companyId: '3542fe00-5f5b-4572-8011-e2d27cf70350',
     amount: 10000000,
@@ -405,6 +408,7 @@ export const INVESTMENTS = [
   },
   {
     id: '11594a3f-4e3b-4b44-9f2a-2611f378e5b0',
+    name: '투자자C',
     userId: '5d8844dc-0c2d-40bc-8710-e54e662b4b1f',
     companyId: '773e9e43-6e4a-44a9-9064-34b5db84f6d1',
     amount: 100000000,
@@ -416,6 +420,7 @@ export const INVESTMENTS = [
   },
   {
     id: 'c472119a-14a9-42ea-8782-f8a5de19e5b2',
+    name: '투자자D',
     userId: '5645d9f6-cb2d-4004-a522-5909d1592662',
     companyId: 'db1a0353-8e84-476c-9b52-53df166a3503',
     amount: 100000000,
@@ -427,6 +432,7 @@ export const INVESTMENTS = [
   },
   {
     id: 'e32a0585-d8ce-43d7-95ef-6d36a0656b02',
+    name: '투자자E',
     userId: 'fca6ef85-02ba-4868-a7b7-4f49ed16e881',
     companyId: '9b43d01f-6e70-431d-a852-cc30ba51c4d57',
     amount: 30000000,
@@ -437,6 +443,7 @@ export const INVESTMENTS = [
   },
   {
     id: '69534aad-54ce-41ec-8017-f9f31a6764f9',
+    name: '투자자E',
     userId: 'fca6ef85-02ba-4868-a7b7-4f49ed16e881',
     companyId: '1c0d70dd-677e-46bc-a863-b746e5e1ff8c',
     amount: 2000000,
