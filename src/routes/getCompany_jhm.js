@@ -15,7 +15,22 @@ router.get(
   '/companies/:id',
   asyncHandler(async (req, res) => {
     const { id } = req.params;
-    const company = await prisma.company.findUniqueOrThrow({ where: { id } });
+    const company = await prisma.company.findUniqueOrThrow({
+      where: { id },
+      select: {
+        id: true,
+        name: true,
+        imageUrl: true,
+        description: true,
+        category: true,
+        actualInvest: true,
+        simInvest: true,
+        revenue: true,
+        employeesCount: true,
+        mySelectionCount: true,
+        compareSelectionCount: true,
+      },
+    });
     res.send(convertToBigIntFromObject(company));
   })
 );

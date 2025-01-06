@@ -1,7 +1,14 @@
 import * as s from 'superstruct';
 import isUuid from 'is-uuid';
 
-const CATEGORIES = ['EDUTECH', 'FASHION', 'PET', 'ENVIRONMENT', 'FINTECH', 'TRAVEL'];
+const CATEGORIES = [
+  'EDUTECH',
+  'FASHION',
+  'PET',
+  'ENVIRONMENT',
+  'FINTECH',
+  'TRAVEL',
+];
 
 const Uuid = s.define('Uuid', (value) => isUuid.v4(value));
 
@@ -27,6 +34,7 @@ export const PatchCompany = s.partial(CreateCompany);
 
 export const CreateInvestment = s.object({
   userId: Uuid,
+  name: s.size(s.string(), 1, 20),
   companyID: Uuid,
   amount: s.min(s.integer(), 0),
   comment: s.size(s.string(), 1, 200),
