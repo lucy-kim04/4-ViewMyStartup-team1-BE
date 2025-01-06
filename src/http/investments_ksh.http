@@ -1,4 +1,4 @@
-GET http://localhost:5500/api/ksh/investments?skip=0&take=10&orderBy=lowestSimInvest
+GET http://localhost:5500/api/ksh/investments?skip=0&take=10&orderBy=asc
 
 ###
 
@@ -7,6 +7,7 @@ Content-Type: application/json
 
 {
   "amount": 5000200,
+  "name": "김세환",
   "comment": "꽤나 느낌이 좋습니다",
   "password": "securePassword123",
   "passwordConfirmation": "securePassword123",

@@ -11,29 +11,20 @@ export default router;
 
 // View My Startup에서 받은 투자 금액, 실제 누적 투자 금액 별 오름차순/내림차순 정렬
 
-
 router.get('/investments', asyncHandler(async (req, res) => {
-    const { offset = 0, limit = 10, orderBy = 'lowestSimInvest' } = req.query;
+    const { offset = 0, limit = 10, orderBy = 'asc' } = req.query;
     const investments = await prisma.investment.findMany({
         skip: Number(offset),
         take: Number(limit),
         orderBy: (() => {
             switch (orderBy) {
-                case 'lowestSimInvest':
+                case 'asc':
                     return {
-                        simInvest: 'asc'
+                        amount: 'asc'
                     };
-                case 'highestSimInvest':
+                case 'desc':
                     return {
-                        simInvest: 'desc'
-                    };
-                case 'lowestActualInvest':
-                    return {
-                        actualInvest: 'asc'
-                    };
-                case 'highestActualInvest':
-                    return {
-                        actualInvest: 'desc'
+                        amount: 'desc'
                     };
                 default:
                     return {};
