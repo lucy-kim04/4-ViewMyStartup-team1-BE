@@ -17,6 +17,7 @@ import createInvestment_ksh from './src/routes/createInvestment_ksh.js';
 import patchInvestment_ksh from './src/routes/patchInvestment_ksh.js';
 import deleteInvestment_ksh from './src/routes/deleteInvestment_ksh.js';
 import getConmpanies_Kem from './src/routes/getCompanies_Kem.js';
+import getCompanies_khj from './src/routes/getCompanies_khj.js';
 
 dotenv.config();
 export const app = express();
@@ -66,5 +67,8 @@ app.use('/api/kjy', getInvesterList_kjy);
 
 // 기업 목록 조회(구은모)
 app.use('/api/kem', getConmpanies_Kem);
+
+// 비교 현황 기업 목록 조회(김희주)
+app.use('/api/khj', getCompanies_khj);
 
 app.listen(process.env.PORT || 5500, () => console.log('Server Started'));

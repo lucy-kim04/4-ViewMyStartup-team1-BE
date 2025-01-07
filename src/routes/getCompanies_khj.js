@@ -1,5 +1,3 @@
-// 조형민
-
 import express from 'express';
 import { PrismaClient } from '@prisma/client';
 import asyncHandler from '../controllers/asyncHandler.js';
@@ -13,10 +11,10 @@ router.get(
   '/companies',
   asyncHandler(async (req, res) => {
     const {
-      limit = 5,
+      limit = 10,
       skip = 0,
       searchString,
-      orderBy = 'highestSales',
+      orderBy = 'highestMySelection',
     } = req.query;
     const where = searchString ? { name: { contains: searchString } } : {};
     let order;
@@ -51,6 +49,26 @@ router.get(
           simInvest: 'asc',
         };
         break;
+      case 'highestMySelection':
+        order = {
+          mySelectionCount: 'desc',
+        };
+        break;
+      case 'lowestMySelection':
+        order = {
+          mySelectionCount: 'asc',
+        };
+        break;
+      case 'highestCompareSelection':
+        order = {
+          compareSelectionCount: 'desc',
+        };
+        break;
+      case 'lowestCompareSelection':
+        order = {
+          compareSelectionCount: 'asc',
+        };
+        break;
       case 'mostEmployees':
         order = {
           employeesCount: 'desc',
@@ -68,7 +86,7 @@ router.get(
         break;
       default:
         order = {
-          revenue: 'desc',
+          mySelectionCount: 'desc',
         };
     }
     const companies = await prisma.company.findMany({
@@ -89,6 +107,9 @@ router.get(
       orderBy: order,
       take: parseInt(limit),
       skip: parseInt(skip),
+    });
+    companies.forEach((company, index) => {
+      company['rank'] = index + parseInt(skip) + 1; // skip을 반영해야 페이지를 넘겼을 때의 순위가 제대로 부여됨
     });
     const totalCount = await prisma.company.count({ where });
     res.send({
