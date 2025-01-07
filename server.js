@@ -20,13 +20,7 @@ import getConmpanies_Kem from "./src/routes/getCompanies_Kem.js";
 import getCompanies_khj from "./src/routes/getCompanies_khj.js";
 
 dotenv.config();
-
 export const app = express();
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
-});
-
 // 모든 url에 대해 cors설정
 app.use(cors());
 // 앱 전체에서 express.json()을 사용하겠다는 의미
