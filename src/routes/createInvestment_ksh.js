@@ -15,7 +15,7 @@ export default router;
  * 특정 기업에 투자를 추가하는 API
  */
 router.post('/investments', asyncHandler(async (req, res) => {
-    const { amount, comment, password, passwordConfirmation, user, company } = req.body;
+    const { amount, name, comment, password, passwordConfirmation, user, company } = req.body;
 
     // 비밀번호 확인
     if (password !== passwordConfirmation) {
@@ -38,6 +38,7 @@ router.post('/investments', asyncHandler(async (req, res) => {
         const newInvestment = await prisma.investment.create({
             data: {
                 amount,
+                name,
                 comment,
                 userId: user.id,
                 companyId: company.id,

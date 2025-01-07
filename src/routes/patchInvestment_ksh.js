@@ -13,7 +13,7 @@ const router = express.Router();
  * 특정 투자 정보를 수정하는 API
  */
 router.put('/investments/:investmentId', asyncHandler(async (req, res) => {
-    const { amount, comment, password, passwordConfirmation, user, company } = req.body;
+    const { amount, name, comment, password, passwordConfirmation, user, company } = req.body;
     const { investmentId } = req.params;
 
     // 비밀번호 확인
@@ -42,6 +42,7 @@ router.put('/investments/:investmentId', asyncHandler(async (req, res) => {
             where: { id: investmentId },
             data: {
                 amount,
+                name,
                 comment,
                 userId: user.id,
                 companyId: company.id,
@@ -51,6 +52,7 @@ router.put('/investments/:investmentId', asyncHandler(async (req, res) => {
         // 업데이트된 투자 정보 응답
         res.status(200).json({
             amount: updatedInvestment.amount.toString(), // BigInt 처리
+            name: updatedInvestment.name,  
             comment: updatedInvestment.comment,
             user: {
                 id: updatedInvestment.userId,

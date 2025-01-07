@@ -19,6 +19,7 @@ import deleteInvestment_ksh from './src/routes/deleteInvestment_ksh.js';
 import getConmpanies_Kem from './src/routes/getCompanies_Kem.js';
 import getCompanies_khj from './src/routes/getCompanies_khj.js';
 
+
 dotenv.config();
 export const app = express();
 // 모든 url에 대해 cors설정
