@@ -21,7 +21,6 @@ router.get(
       totalInvestAmount += newInvestment.amount;
     });
     const totalCount = allCompanyInvestments.investments.length;
-    console.log(allCompanyInvestments);
     const companyInvestments = await prisma.company.findUniqueOrThrow({
       where: {
         id: req.params.id,
@@ -45,11 +44,9 @@ router.get(
         },
       },
     });
-    console.log(companyInvestments);
     if (!companyInvestments) {
       return res.status(404).send({ message: 'Company not found' });
     }
-    console.log(companyInvestments);
     companyInvestments.investments.forEach((investment, index) => {
       investment['rank'] = index + parseInt(skip) + 1; // skip을 반영해야 페이지를 넘겼을 때의 순위가 제대로 부여됨
     });
