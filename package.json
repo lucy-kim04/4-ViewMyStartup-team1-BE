@@ -27,7 +27,6 @@
   },
   "type": "module",
   "prisma": {
-    "seed": "node src/data/seed.js",
-    "schema": "./prisma/schema.prisma"
+    "seed": "node src/data/seed.js"
   }
 }
