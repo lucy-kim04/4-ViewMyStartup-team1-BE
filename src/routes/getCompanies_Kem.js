@@ -9,7 +9,7 @@ const router = express.Router();
 const prisma = new PrismaClient();
 
 router.get(
-  '/api/kem/companies',
+  '/companies',
   asyncHandler(async (req, res) => {
     const companies = await prisma.company.findMany();
     res.send(convertToBigIntFromObjArray(companies));
