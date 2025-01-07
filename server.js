@@ -23,6 +23,9 @@ dotenv.config();
 
 export const app = express();
 const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Server running at http://localhost:${PORT}`);
+});
 
 // 모든 url에 대해 cors설정
 app.use(cors());
