@@ -16,6 +16,7 @@ import getCompanies_ksh from './src/routes/getCompanies_ksh.js';
 import createInvestment_ksh from './src/routes/createInvestment_ksh.js';
 import patchInvestment_ksh from './src/routes/patchInvestment_ksh.js';
 import deleteInvestment_ksh from './src/routes/deleteInvestment_ksh.js';
+import getConmpanies_Kem from './src/routes/getCompanies_Kem.js';
 
 dotenv.config();
 export const app = express();
@@ -58,10 +59,12 @@ app.use('/api/ksh', patchInvestment_ksh);
 // 투자 정보 삭제(김세환)
 app.use('/api/ksh', deleteInvestment_ksh);
 
-
 // 기업 상세 정보 조회(김주영)
 app.use('/api/kjy', getCompanyDetail_kjy);
 // 해당 기업에 투자한 투자자 목록 조회(김주영)
 app.use('/api/kjy', getInvesterList_kjy);
+
+// 기업 목록 조회(구은모)
+app.use('/api/kem', getConmpanies_Kem);
 
 app.listen(process.env.PORT || 5500, () => console.log('Server Started'));
